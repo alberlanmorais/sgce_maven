@@ -16,7 +16,10 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
     
     <!--Configurações do pool de conexões-->
-    
+    <property name="c3p0.min_size">1</property>
+    <property name="c3p0.timeout">300</property>
+    <property name="c3p0.max_statements">80</property>
+    <property name="hibernate.c3p0.idle_test_period">300</property>    
     
     <!--<property name="c3p0.max_size">20</property> <!-->
     <mapping class="br.com.sgce.entity.Aluno"/>

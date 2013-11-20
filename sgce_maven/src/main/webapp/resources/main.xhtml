@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="./css/default.css" rel="stylesheet" type="text/css" />
+        <link href="./css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+        <p:breadCrumb>
+            
+        </p:breadCrumb>
+        <div id="menu">             <!-- Menu ########################################## Menu-->
+            <h:form>    
+                <p:menubar styleClass="labelmenu">
+                    <p:submenu label="Cadastros">  
+                        <p:menuitem value="Alunos" url="/restrict/cadastraraluno.jsf"/>
+                        <p:menuitem value="Alunos" url="/restrict/cadastraraluno.jsf"/>                        
+                        <p:menuitem value="Turmas" ajax="false"/>                        
+                    </p:submenu> 
+                    <p:submenu label="Consultas">  
+                        <p:menuitem value="Pessoas" url="/restrict/consultarpessoas.faces"/>  
+                    </p:submenu>                                      
+                </p:menubar> 
+                <div id="tarefas">
+                    <ui:insert name="tarefas"></ui:insert>
+                </div>
+            </h:form>           
+        </div>
+    </h:body>
+</html>
