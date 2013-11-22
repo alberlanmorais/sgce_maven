@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="./../resources/main.xhtml">
+
+
+    <ui:define name="tarefas">
+        <br/>
+        <p:fieldset legend="Cadastrar Aluno">
+            <p:tabView id="tbv1">
+                <p:tab title="Aluno" >
+                    <h:form prependId="false" id="formAluno">
+                        <p:growl id="msg0"/>
+                        <h:panelGrid columns="2" cellpadding="4" styleClass="panelGrid" id="grid0">
+                            <p:outputLabel/>
+                            <h:inputHidden id="idaluno" value="#{mbAluno.aluno.id_aluno}"/>
+
+                            <h:outputLabel for="nome" value="Nome.:"/>
+                            <p:inputText id="nome" size="40" style="line-height" value="#{mbAluno.aluno.nome}"/>
+
+                            <h:outputLabel for="responsavel" value="Responsável.:"/>
+                            <p:inputText id="responsavel" size="40" style="line-height" value="#{mbAluno.aluno.responsavel}"/>
+
+                            <h:outputLabel for="email" value="E-mail.:"/>
+                            <p:inputText id="email" size="40" style="line-height" value="#{mbAluno.aluno.email}"/>
+
+                            <h:outputLabel for="endereco" value="Endereço.:"/>
+                            <p:inputText id="endereco" size="30" style="line-height" value="#{mbAluno.aluno.endereco}"/>
+
+                            <h:outputLabel for="bairro" value="Bairro.:"/>
+                            <p:inputText id="bairro" size="30" style="line-height" value="#{mbAluno.aluno.bairro}"/>
+
+                            <h:outputLabel for="cidade" value="Cidade.:"/>
+                            <p:inputText id="cidade" size="30" style="line-height" value="#{mbAluno.aluno.cidade}"
+                                         onkeyup="this.valeu = this.value.toUpperCase()" required="true"
+                                         requiredMessage="O campo [Nome] é obrigatório"/>
+                            <br/>
+                        </h:panelGrid>
+                        <p:panel>
+                            <p:panel>
+                                <p:commandButton value="Salvar" action="#{mbAluno.addAluno}"
+                                                 image="ui-icon ui-icon-disk" update="@form"/>
+                                <p:commandButton value="Cancelar" actionListener="#{mbAluno.limpAluno}"
+                                                 image="ui-icon ui-icon-close" update="@form"/>
+                            </p:panel>
+                        </p:panel>                     
+                    </h:form>  
+                </p:tab>
+            </p:tabView>
+        </p:fieldset>
+
+    </ui:define>
+
+</ui:composition>
